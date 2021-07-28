@@ -10,11 +10,30 @@ import { window } from 'vscode';
  */
 export async function showQuickPick() {
 	let i = 0;
-	const result = await window.showQuickPick(['eins', 'zwei', 'drei'], {
-		placeHolder: 'eins, zwei or drei',
+	const result = await window.showQuickPick(['style_collision', 'zwei', 'drei'], {
+		placeHolder: 'Choose Option from list like style collision and so on....',
 		onDidSelectItem: item => window.showInformationMessage(`Focus ${++i}: ${item}`)
 	});
-	window.showInformationMessage(`Got: ${result}`);
+	// const msg = (result == 'style_collision') ? `Initiated: ${result}` : `Got: ${result}`;
+	switch(result) {
+		case 'style_collision':
+			showInform(result);
+		break;
+	}
+	// window.showInformationMessage(msg);
+}
+
+export async function showInform(msg: any) {
+	const inputCode = await window.showInputBox({
+		placeHolder: 'Enter application name to execute style collision',
+		validateInput: text => {
+			return text === '123' ? 'Not 123!' : null;
+		},
+		value: ''
+	});
+
+	
+	window.showInformationMessage(`${inputCode} application is Initiated for Style Collision`);
 }
 
 /**

@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 
 const cats = {
-	'Coding Cat': 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
+	'Coding Cat': 'https://i.postimg.cc/fbm33cJG/logo.png',
 	'Compiling Cat': 'https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif',
 	'Testing Cat': 'https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif'
 };
@@ -162,7 +162,7 @@ class CatCodingPanel {
 	}
 
 	private _updateForCat(webview: vscode.Webview, catName: keyof typeof cats) {
-		this._panel.title = catName;
+		this._panel.title = 'TriPAs';
 		this._panel.webview.html = this._getHtmlForWebview(webview, cats[catName]);
 	}
 
@@ -200,13 +200,25 @@ class CatCodingPanel {
 				<link href="${stylesResetUri}" rel="stylesheet">
 				<link href="${stylesMainUri}" rel="stylesheet">
 
-				<title>Cat Coding</title>
+				<title>TriPAs</title>
 			</head>
 			<body>
-				<img src="${catGifPath}" width="300" />
+				<div class="container">
+					<div class="image-container">
+						<img class="logo" src="${catGifPath}" width="300" />
+					</div>
+					<div class="btn-container">
+						<button onclick="getAlert()">Style Collision</button>
+						<button onclick="getAlert()">Lunch TFS</button>
+						<button onclick="getAlert()">Remainder</button>
+					</div>
+				</div>
 				<h1 id="lines-of-code-counter">0</h1>
 
 				<script nonce="${nonce}" src="${scriptUri}"></script>
+				<script>
+				
+				</script>
 			</body>
 			</html>`;
 	}

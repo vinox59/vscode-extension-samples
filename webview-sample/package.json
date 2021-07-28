@@ -26,7 +26,7 @@
 			{
 				"command": "catCoding.start",
 				"title": "Start cat coding session",
-				"category": "Cat Coding"
+				"category": "TriPAs"
 			},
 			{
 				"command": "catCoding.doRefactor",

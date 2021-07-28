@@ -26,7 +26,7 @@
                 text: '🐛  on line ' + currentCount
             });
         }
-    }, 100);
+    }, 10000);
 
     // Handle messages sent from the extension to the webview
     window.addEventListener('message', event => {
@@ -38,4 +38,10 @@
                 break;
         }
     });
+
+    function getAlert() {
+        vscode.postMessage({command: "alert", text: "BUTTON PRESSED!"});
+    }
+    
 }());
+

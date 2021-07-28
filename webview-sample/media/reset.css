@@ -28,3 +28,21 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+.logo {
+	margin-left: 35%;
+	text-align: center;
+}
+
+button {
+	margin-bottom: 10px;
+}
+
+.btn-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.btn-container button {
+	margin-right: 5px !important;
+}
